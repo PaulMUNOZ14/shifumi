@@ -6,19 +6,19 @@ const choix = ['Pierre', 'Feuille', 'Ciseaux'];
 buttons.forEach(button =>{
     button.addEventListener('click', () => {
         const Joueur = button.textContent;
-        const Site = choix[Math.floor(Math.random() * 3)]
+        const Robot = choix[Math.floor(Math.random() * 3)]
         let resultat = ""
-        if(Joueur == Site){
+        if(Joueur == Robot){
             resultat = "Egalite"
         } else if (
-            (Joueur == "Pierre" && Site == "Ciseaux") ||
-            (Joueur == "Feuille" && Site == "Pierre") ||
-            (Joueur == "Ciseaux" && Site == "Feuille")) {
+            (Joueur == "Pierre" && Robot == "Ciseaux") ||
+            (Joueur == "Feuille" && Robot == "Pierre") ||
+            (Joueur == "Ciseaux" && Robot == "Feuille")) {
                 resultat = "Victoire"
         } else {
             resultat = "Défaite"
         }
 
-        res.innerHTML = resultat
+        res.innerHTML = `Vous avez joué : ${Joueur}<br>Le robot a joué : ${Robot}<br>C'est une <strong>${resultat}</strong>`;
     })
 });
